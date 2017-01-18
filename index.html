@@ -21,7 +21,6 @@ google.charts.setOnLoadCallback(drawTreeChart);
           ]);
 
  var options = {title:'Total Reference Transactions',
-                colors: '#800000', '#D6D6CE', '#FFB547', '#767676',
                 pieHole: 0.4};
 
  var chart = new google.visualization.PieChart(document.getElementById('Total_Chart_div'));
@@ -104,7 +103,7 @@ function drawPatronChart() {
   
 <body>
    
-<div id="Total_Chart_div" style="width: 900px; height: 500px; border: 1px solid #ccc; margin:0 auto;"></div>
+<div id="Total_Chart_div" style="width: 900px; height: 500px; border: 1px solid #ccc; margin:0 auto; colors: '#800000', '#D6D6CE', '#FFB547', '#767676';"></div>
 <br>
  <p> Over the autumn quarter, reference librarians charted 396 questions. People are invited to call, instant message, or visit the reference desk. Overwhelmingly, the most popular way people interacted with librarians was by visiting the <i> Ask a Librarian </i> desk. </p> 
  <br> 
