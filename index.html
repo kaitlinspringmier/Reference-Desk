@@ -20,7 +20,8 @@ google.charts.setOnLoadCallback(drawTreeChart);
           ['Phone', 12],
           ]);
 
- var options = {title:'Total Reference Transactions', 
+ var options = {title:'Total Reference Transactions',
+                colors: ['#800000', '#D6D6CE', '#FFB547']
         pieHole: 0.4};
 
  var chart = new google.visualization.PieChart(document.getElementById('Total_Chart_div'));
