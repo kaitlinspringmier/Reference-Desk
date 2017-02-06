@@ -1,11 +1,9 @@
-<!DOCTYPE HTML>
-
+<!DOCTYPE html>
 <html>
- <title> Reference Desk Analysis </title> 
+<title>The Reference Desk</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
- <head>
- <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-black.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,17 +12,15 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 .w3-sidenav a,.w3-sidenav h4 {padding: 12px;}
 .w3-navbar li a {
     padding-top: 12px;
-    padding-bottom: 12px;
+    padding-bottom: 12px;	
 }
-</style> 
+</style>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
 google.charts.load('current', {'packages':['corechart', 'treemap']});
-
 google.charts.setOnLoadCallback(drawTotalChart);
 google.charts.setOnLoadCallback(drawPatronChart);
 google.charts.setOnLoadCallback(drawTreeChart);
-
  function drawTotalChart() {
  var data = new google.visualization.DataTable();
         data.addColumn('string', 'How');
@@ -34,86 +30,32 @@ google.charts.setOnLoadCallback(drawTreeChart);
           ['In Person', 328],
           ['Phone', 12],
           ]);
-
  var options = {title:'Total Reference Transactions',
                 colors: ['#767676','#800000', '#FFB547'],
                 pieHole: 0.4};
-
  var chart = new google.visualization.PieChart(document.getElementById('Total_Chart_div'));
         chart.draw(data, options);
       }
-
 function drawPatronChart() {
     var data = new google.visualization.arrayToDataTable([
           ['Day', 'Alumni', 'Faculty/Staff', 'Students', 'Visitors', 'Unknown'],
           ['Saturday', 4, 9, 91, 18, 80],
           ['Sunday', 2, 8, 89, 11, 84]
         ]);
-
  var options = {title:'Questions by Patron Type',
                  colors: ['#800000', '#FFB547', '#8A9045', '#155F83', '#350E20'],
         isStacked: true
                        };
-
  var chart = new google.visualization.BarChart(document.getElementById('Patron_Chart_div'));
         chart.draw(data, options);
       }
-
-
       
- function drawTreeChart() {
-      var data = new google.visualization.DataTable();
-      data.addColumn('string', 'ID');
-      data.addColumn('string', 'Parent');
-      data.addColumn('number', 'Number Of Questions');
-      data.addRows([
-        ['Reference Questions', null, 0],
-
-        ['General Assistance', 'Reference Questions', null],
-        ['Research Assistance', 'Reference Questions', null],
-        
-
-        ['Office Supplies', 'General Assistance', 28],
-        ['TechB@r', 'General Assistance', 17],
-        ['Directions', 'General Assistance', 45],
-        ['Circulation', 'General Assistance', 27],
-        ['IPO', 'General Assistance', 26],
-        ['Other General Assistance', 'General Assistance', 27],
-       
-        ['Known Item', 'Research Assistance', null],
-        ['Reserve', 'Known Item', 11],
-        ['Book Search', 'Known Item', 44],
-        ['Other Known Item', 'Known Item', 47],
-        
-       ['Specialized Research Assistance', 'Research Assistance', 48],
-       
-       ['Help with Technology/Printing', 'Reference Questions', null], 
-       ['Print, copy, scan', 'Help with Technology/Printing', 13],
-       ['eResource Access', 'Help with Technology/Printing', 20], 
-       ['Help with technology', 'Help with Technology/Printing', 27],
-      ]);
-
-      var tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
-
-      var options = {
-        highlightOnMouseOver: true,
-        maxDepth: 1,
-        maxPostDepth: 2,
-        headerHeight: 15,
-        showScale: true,
-        height: 500,
-        useWeightedAverageForAggregation: true,
-             };
-
-        tree.draw(data, options);
- 
-       }
      
 </script>
-  </head>
-  
+
 <body>
- <!-- Navbar -->
+
+<!-- Navbar -->
 <div class="w3-top">
   <ul class="w3-navbar w3-theme w3-top w3-left-align w3-large">
     <li class="w3-opennav w3-right w3-hide-large">
@@ -121,41 +63,66 @@ function drawPatronChart() {
     </li>
     <li><a href="#" class="w3-theme-l1">Logo</a></li>
     <li class="w3-hide-small"><a href="#" class="w3-hover-white">The Project</a></li>
-    <li class="w3-hide-small"><a href="#" class="w3-hover-white">The Creator</a></li>
-    <li class="w3-hide-small"><a href="#" class="w3-hover-white">The Library</a></li>
-    <li class="w3-hide-small"><a href="#" class="w3-hover-white">Contact</a></li>
-   </ul>
+    <li class="w3-hide-small"><a href="https://www.lib.uchicago.edu/about/directory/staff/kaitlin-springmier/" class="w3-hover-white">The Lead</a></li>
+    <li class="w3-hide-small"><a href="www.lib.uchicago.edu" class="w3-hover-white">The Library</a></li>
+    <li class="w3-hide-small"><a href="www.lib.uchicago.edu/ask" class="w3-hover-white">Contact</a></li>
+    </ul>
 </div>
- 
- <!-- Sidenav -->
-<nav class="w3-sidenav w3-collapse w3-theme-l5 w3-animate-left" style="z-index:3;width:250px;margin-top:51px;" id="mySidenav">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="close menu">
-    <i class="fa fa-remove"></i>
-  </a>
-  <h4><b>Menu</b></h4>
-  <a href="#" class="w3-hover-black">Link</a>
-  <a href="#" class="w3-hover-black">Link</a>
-  <a href="#" class="w3-hover-black">Link</a>
-  <a href="#" class="w3-hover-black">Link</a>
-</nav>
- 
- <!-- Overlay effect when opening sidenav on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-<!-- Overlay effect when opening sidenav on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
- 
- <div class="w3-third w3-container">
+
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-black">Total Transactions</h1>
   
- <div id="Total_Chart_div" style="width: 900px; height: 500px; border: 1px solid #ccc; margin:0 auto;"></div>
-<br>
- <p> Over the autumn quarter, reference librarians charted 396 questions. People are invited to call, instant message, or visit the reference desk. Overwhelmingly, the most popular way people interacted with librarians was by visiting the <i> Ask a Librarian </i> desk. </p> 
- <br> 
+<div id="Total_Chart_div" style="width: 900px; height: 500px; border: 1px solid #ccc; margin:0 auto;"></div>
+      
+<p>Reference Librarians charted a total of 396 reference transactions. People are invited to call, instant message, or visit the reference desk. Overwhelmingly, the most popular way people interacted with a librarian was to visit the <i> Ask a Librarian </i> desk.</p>
+    </div>
+    
+  
+  <div class="w3-row">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-maroon">Who's Asking?</h1>
+ 
 <div id="Patron_Chart_div" style="width: 900px; height: 500px; border: 1px solid #ccc; margin:0 auto;"></div>
 
-<div id="chart_div" style="width: 900px; height: 500px; border: 1px solid #ccc; margin:0 auto;"></div>
+<p>Librarians answer about 19-20 questions on Saturday and Sunday, as compared to an average of 45-50 questions per weekday. 45% of these questions were with UChicago students. </p>
     </div>
+   </div>
 
- <footer id="myFooter">
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-black">What do they want to know?</h1>
+      </div>
+      </div>
+     <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Ic_directions_48px.svg/200px-Ic_directions_48px.svg.png" alt="Direction width="150" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>General Assistance & Directions</b></p>
+        <p>Fourty-three percent of tracked questions were tagged as 'general assistance,' in which librarians give users directions (11%), provide office supplies (7%) or refer the user to another service point such as circulation or the id & privileges office (18%).</p>
+      </div>
+    </div>
+    
+<div class="w3-third w3-container w3-margin-bottom">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Documents_icon_-_noun_project_5020.svg/2000px-Documents_icon_-_noun_project_5020.svg.png" alt="Book" width="150" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Locating Resources</b></p>
+        <p>Twenty-six percent of transactions were tagged as 'known item', meaning that the patron has found something they are interesting in reading, but aren't sure how to access it in the library.
+This can include finding articles in databases (3%), locating items on reserve (3%), or finding a book in the stacks (11%).</p>
+      </div>
+    </div>
+    
+<div class="w3-third w3-container">
+      <img src="https://cdn.pixabay.com/photo/2015/07/23/13/09/chemistry-856929_960_720.png" alt="Research" width="100" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Research Assistance</b></p>
+        <p>Twelve percent of questions logged were tagged as 'research assistance', meaning that the patron stopped by the reference desk asking for instruction in finding, using, or citing information. </p>
+      </div>
+    </div>
+  </div>
+
+    <footer id="myFooter">
     <div class="w3-container w3-theme-l2 w3-padding-32">
       <h4>Footer</h4>
     </div>
@@ -193,7 +160,5 @@ function w3_close() {
 }
 </script>
 
-  
-  </body>
+</body>
 </html>
-
